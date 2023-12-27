@@ -6,21 +6,28 @@ class Lexer:
     operations = "+-/*()"
     ignore = ["#", "//", " "]
 
+    #set a constructor
     def __init__(self, text):
         self.text = text
+        #test = > user input
         self.pos = 0
         self.tokens = []
+        #tokens = > terminal = > keywords
         self.char = self.text[self.pos]
+        #once token is knows it will be added to tokens list
         self.token = None
 
     def tokenize(self):
         while self.pos < len(self.text):
+                            #here cause didgits is static = > is accessed by class Lexer
             if self.char in Lexer.digits:
+                # I did not understand it bro. extract_number ?? 
                 self.token = self.extract_number()
 
             elif self.char in Lexer.operations:
+                #check if input(char) is included in Operations
                 self.token = Operations(self.char)
-                self.move()
+                self.move() # move to where ?? it does move to the next character using the position
 
             elif self.char in Lexer.ignore:
                 self.move()
