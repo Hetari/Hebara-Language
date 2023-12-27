@@ -2,18 +2,6 @@ import sys
 import os
 import Tokens
 
-# Get the current directory
-current_dir = os.path.dirname(os.path.abspath(__file__))
-
-# Get the parent directory of the current directory
-parent_dir = os.path.dirname(current_dir)
-
-# Add the parent directory to the Python module search path
-sys.path.append(parent_dir)
-
-# Now you can import the BinaryTree module
-from lib import BinaryTree as BinaryTree  # noqa
-
 
 class Interpreter:
     def __init__(self, tree):
