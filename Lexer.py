@@ -21,13 +21,12 @@ class Lexer:
         while self.pos < len(self.text):
                             #here cause didgits is static = > is accessed by class Lexer
             if self.char in Lexer.digits:
-                # I did not understand it bro. extract_number ?? 
                 self.token = self.extract_number()
 
             elif self.char in Lexer.operations:
                 #check if input(char) is included in Operations
                 self.token = Operations(self.char)
-                self.move() # move to where ?? it does move to the next character using the position
+                self.move() # move it to the next character using the position
 
             elif self.char in Lexer.ignore:
                 self.move()
