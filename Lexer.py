@@ -60,8 +60,7 @@ class Lexer:
 
         # Iterate through the input text until we reach the end or a non-digit/non-decimal character
         while self.position < len(self.text) and (self.char in Lexer.digits or self.char == "."):
-            if self.char == ".":
-                isFloat = True
+            isFloat = self.char == "."
 
             # Append the current character to the number string
             number += self.char
@@ -71,7 +70,7 @@ class Lexer:
 
         # Return an instance of Tokens.Integer if the extracted number is an integer,
         # otherwise return an instance of Tokens.Float
-        return Tokens.Integer(number) if not isFloat else Tokens.Float(number)
+        return Tokens.Float(number) if isFloat else Tokens.Integer(number)
 
     def move(self) -> None:
         """
