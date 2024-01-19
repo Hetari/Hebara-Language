@@ -1,6 +1,6 @@
+import src.Tokens as Tokens
 import sys
 import os
-import Tokens
 
 
 class Interpreter:

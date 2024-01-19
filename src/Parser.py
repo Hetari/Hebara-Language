@@ -1,4 +1,4 @@
-import Tokens
+import src.Tokens as Tokens
 
 
 class Parser:
